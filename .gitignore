@@ -3,3 +3,5 @@ node_modules/
 
 # DEV: Sublime
 *.sublime-*
+
+package-lock.json
