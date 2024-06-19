@@ -15,6 +15,24 @@ const sumar = (req, res) => {
 }
 app.get('/suma', sumar)
 
+const multiplicar = (req, res) => {
+    mul1 = Number(req.query.multiplicando1)
+    mul2 = Number(req.query.multiplicando2)
+    var resultado = mul1 * mul2
+
+    res.send(`multiplicar: ${mul1} x ${mul2} = ${resultado}`)
+}
+app.get('/multiplicacion', multiplicar)
+
+app.get('/lista-de-1', (req, res) => {
+    var a = Number(req.query.a)
+    var lista = []
+    for (i = 1; i <= a; i++) {
+        lista.push(i)
+    }
+    res.send(`${lista}`)
+})
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
